@@ -49,7 +49,12 @@ class Gui:
         :param hoogte: de hoogte in pixels van het venster
         :param aantal_munten: het aantal munten dat in het begin van het spel op de stapel ligt
         """
-        self.stapel = list(range(1, aantal_munten + 1))
+
+        # de stapel kan tussen de 5 en 50 munten bevatten
+        if aantal_munten >= 5 and aantal_munten <= 50:
+            self.stapel = list(range(1, aantal_munten + 1))
+        else:
+            self.stapel = list(range(1, 7 + 1))
         self.aantal_munten = aantal_munten
         self.spelers = (1, 2)
         self.huidige_speler = choice(self.spelers)

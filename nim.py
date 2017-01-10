@@ -36,8 +36,6 @@ def pak_munt(stapel, aantal_munten=1):
         for i in range(aantal_munten):
             stapel.pop()
 
-        print(len(stapel))
-
         # Het spel nog niet is voorbij dus de methode returned False
         return False
 
