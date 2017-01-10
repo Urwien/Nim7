@@ -21,7 +21,15 @@ def pak_munt(stapel, aantal_munten=1):
     # controleer hoeveel munten op de stapel zitten, als er nog maar één is,
     # wint de speler die de munt pakt
     if len(stapel) == 1:
+        stapel.pop()
+
         # Het spel is voorbij dus de methode returned True
+        return True
+    # als de speler de laatste twee munten pakt
+    elif aantal_munten == 2 and len(stapel) == 2:
+        stapel.pop()
+        stapel.pop()
+
         return True
     else:
         # pak aantal_munten munten van de stapel
